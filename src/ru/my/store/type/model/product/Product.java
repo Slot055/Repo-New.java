@@ -3,6 +3,8 @@ package ru.my.store.type.model.product;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.shelf.Shelf;
 
+import java.util.Scanner;
+
 public class Product {
     private String name;
     private double price;
@@ -21,7 +23,7 @@ public class Product {
     }
 
 
-    public void welcome() {
+    public void welcome(Scanner scanner) {
 
         System.out.println("Встречает продавец консультант");
     }

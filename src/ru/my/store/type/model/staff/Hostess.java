@@ -35,7 +35,7 @@ public class Hostess extends Staff {
             int a = scanner.nextInt();
             if (a == 1) {
                 System.out.println("Отдел Алкоголя находится слева от входа, проводить?");
-                System.out.println("Да - 1" + "\n" + "Нет - 2");
+                System.out.println("1 - Да" + "\n" + "2 - Нет");
                 int b = scanner.nextInt();
                 if (b == 1) {
                     offerABasket();
@@ -54,7 +54,7 @@ public class Hostess extends Staff {
 
             } else if (a == 2) {
                 System.out.println("Отдел Спортивных товаров находится по центру от входа, проводить?");
-                System.out.println("Да - 1" + "\n" + "Нет - 2");
+                System.out.println("1 - Да" + "\n" + "2 - Нет");
                 int b = scanner.nextInt();
                 if (b == 1) {
                     offerABasket();
@@ -73,7 +73,7 @@ public class Hostess extends Staff {
 
             } else if (a == 3) {
                 System.out.println("Отдел Бытовой техники находится справа от входа, проводить?");
-                System.out.println("Да - 1" + "\n" + "Нет - 2");
+                System.out.println("1 - Да" + "\n" + "2 - Нет");
                 int b = scanner.nextInt();
                 if (b == 1) {
                     offerABasket();

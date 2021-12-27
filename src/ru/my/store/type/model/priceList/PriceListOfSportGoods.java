@@ -8,7 +8,13 @@ public class PriceListOfSportGoods extends PriceList {
     public PriceListOfSportGoods() {
     }
 
-    public void print(){
-        System.out.println("Вывод прайс-листа спортивных товаров");
+    String[] PriceListOfSportGoods = {"Мяч - 1500.00", "Бейсбольная бита - 700.00", "Клюшка для хоккея - 2500.00"};
+
+    public void print() {
+        System.out.println("---------------------------------" + "\n" + "Вывод прайс-листа спортивных товаров: " +
+                "\n" + "---------------------------------");
+        for (String sum : PriceListOfSportGoods)
+            System.out.println(sum);
+        System.out.println("---------------------------------");
     }
 }

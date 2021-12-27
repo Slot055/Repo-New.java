@@ -33,7 +33,7 @@ public class Alcohol extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Алкоголь" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
-        shopAssistant.advises(scanner, priceListOfAlcohol);
+        shopAssistant.advises(scanner,priceListOfAlcohol);
         shopAssistant.helpsWithTheChoice();
 
     }

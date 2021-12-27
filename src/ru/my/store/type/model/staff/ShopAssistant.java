@@ -48,14 +48,16 @@ public class ShopAssistant extends Staff {
     }
 
 
-    public void helpsWithTheChoice(Scanner scanner, Product product) {
+    public void helpsWithTheChoice(Scanner scanner, Product product,PriceList priceList) {
         System.out.println("Могу Вам посоветовать товар или нужно что то конкретное?:" + "\n" + "1 - Посоветовать "
-                + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - Вернуться к предыдущему выбору");
+                + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - начать сначала");
         while (true) {
             int a = scanner.nextInt();
             if (a == 1) {
                 System.out.println("Хочу обратить Ваше внимание на данный экземпляр: ");
                 product.infoTopProduct();
+                System.out.println("---------------------------------");
+                product.choiceProduct();
                 break;
             } else if (a == 2) {
 
@@ -63,7 +65,9 @@ public class ShopAssistant extends Staff {
                 break;
             } else if (a == 3) {
 
-                advises(scanner,priceList);
+                product.welcome(scanner);
+
+                break;
             } else {
                 System.out.println("Извините, не понял" + "\n" + "1 - Хотите получить информацию об активном ассортименте?"
                         + "\n" + "2 - Хотите вернуться к выбору отделов?" + "\n" + "3 - Хотите уйти из магазина?");
