@@ -39,22 +39,21 @@ public class SportGoods extends Product {
     PriceListOfSportGoods priceListOfSportGoods = new PriceListOfSportGoods("Мяч", 500.00, 123);
 
 
-
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Спортивных продуктов" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
+        Ball topBall = new Ball("Мяч футбольный", 1500.00, 12345, "Кожа", "Футбол",
+                "Мультиколор", 5, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый");
         shopAssistant.advises(scanner, priceListOfSportGoods);
-        Ball topBall = new Ball("Мяч футбольный", 1500.00,12345,"Кожа","Футбол",
-                "Мультиколор",5,"США","Профессиональный","5",0.5,"Adidas","Круглый");
-        shopAssistant.helpsWithTheChoice(scanner,topBall);
+        shopAssistant.helpsWithTheChoice(scanner, topBall, priceListOfSportGoods);
     }
 
 
     @Override
     public void choiceProduct() {
-        System.out.println("Что то выбрали из данного ассортмента?");
+        System.out.println("Можем перейти к выбору продукта: " + "\n" + "---------------------------------");
+        System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName() + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
     }
-
 
 
     public void testGood() {
