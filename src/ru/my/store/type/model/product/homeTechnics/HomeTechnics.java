@@ -2,6 +2,7 @@ package ru.my.store.type.model.product.homeTechnics;
 
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.priceList.PriceListOfHomeTechnics;
+import ru.my.store.type.model.shelf.ShelfOfHomeTechnics;
 import ru.my.store.type.model.staff.Staff;
 import ru.my.store.type.model.staff.ShopAssistant;
 
@@ -14,6 +15,7 @@ public class HomeTechnics extends Product {
     private String technicalSpecifications;
     private int rating;
     private Staff staff;
+    private ShelfOfHomeTechnics shelfOfHomeTechnics;
 
     public HomeTechnics(String name, double price, int item, String color, double guaranteePeriod, String manufacturer, String technicalSpecifications, int rating) {
         super(name, price, item);
@@ -35,15 +37,18 @@ public class HomeTechnics extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Бытовой техники" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
+        Teapot topTeapot = new Teapot("Чайник электрический", 1700.00, 123789, "Электрический", "Белый",
+                2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10);
         shopAssistant.advises(scanner, priceListOfHomeTechnics);
-        shopAssistant.helpsWithTheChoice();
+        shopAssistant.helpsWithTheChoice(scanner, topTeapot,priceListOfHomeTechnics,shelfOfHomeTechnics);
     }
 
     @Override
-    public void infoTopProduct() {
-        super.infoTopProduct();
-        System.out.println("Пылесос");
+    public void choiceProduct() {
+        System.out.println("Можем перейти к выбору продукта: " + "\n" + "---------------------------------");
+        System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName() + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
     }
+
 
     public String getColor() {
         return color;
@@ -92,6 +97,14 @@ public class HomeTechnics extends Product {
 
     public void setStaff(Staff staff) {
         this.staff = staff;
+    }
+
+    public ShelfOfHomeTechnics getShelfOfHomeTechnics() {
+        return shelfOfHomeTechnics;
+    }
+
+    public void setShelfOfHomeTechnics(ShelfOfHomeTechnics shelfOfHomeTechnics) {
+        this.shelfOfHomeTechnics = shelfOfHomeTechnics;
     }
 }
 

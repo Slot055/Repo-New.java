@@ -1,14 +1,18 @@
 package ru.my.store.type.model.staff;
 
 import ru.my.store.type.OfflineStore;
+import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
+import ru.my.store.type.model.shelf.Shelf;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShopAssistant extends Staff {
     private PriceList priceList;
     private Product product;
+    private Shelf shelf;
 
 
     public ShopAssistant(String name, String position, double expirience) {
@@ -48,7 +52,7 @@ public class ShopAssistant extends Staff {
     }
 
 
-    public void helpsWithTheChoice(Scanner scanner, Product product,PriceList priceList) {
+    public void helpsWithTheChoice(Scanner scanner, Product product, PriceList priceList,Shelf shelf) {
         System.out.println("Могу Вам посоветовать товар или нужно что то конкретное?:" + "\n" + "1 - Посоветовать "
                 + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - начать сначала");
         while (true) {
@@ -60,8 +64,17 @@ public class ShopAssistant extends Staff {
                 product.choiceProduct();
                 break;
             } else if (a == 2) {
+                priceList.print();
+                System.out.println("Введите нужный артикул из ассортимента: ");
+                int b = scanner.nextInt();
+                if (b == 0) {
 
+                    product.takeFromTheShelf(shelf);
 
+                } else if (b == 1) {
+
+                    System.out.println("Отличный выбор, " + product.toString() + " в корзине");
+                }
                 break;
             } else if (a == 3) {
 
@@ -91,6 +104,14 @@ public class ShopAssistant extends Staff {
     @Override
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Shelf getShelf() {
+        return shelf;
+    }
+
+    public void setShelf(Shelf shelf) {
+        this.shelf = shelf;
     }
 }
 

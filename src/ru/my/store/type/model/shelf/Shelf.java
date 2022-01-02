@@ -4,8 +4,8 @@ import ru.my.store.type.model.product.Product;
 
 public class Shelf {
 
-    int [] ProductOnTheShelf = {1,2,3,4,5,6,7,8,9,10};
-    private String nameProduct;
+    public Product[] productOnTheShelf = new Product[10];
+    private String nameShelf;
     private int maxLot;
     private int lot;
     private int freeSpace;
@@ -13,8 +13,8 @@ public class Shelf {
 
 
 
-    public Shelf(String nameProduct, int maxLot, int lot, int freeSpace) {
-        this.nameProduct = nameProduct;
+    public Shelf(String nameShelf, int maxLot, int lot, int freeSpace) {
+        this.nameShelf = nameShelf;
         this.maxLot = maxLot;
         this.lot = lot;
         this.freeSpace = freeSpace;
@@ -42,12 +42,12 @@ public class Shelf {
         this.maxLot = maxLot;
     }
 
-    public String getNameProduct() {
-        return nameProduct;
+    public String getNameShelf() {
+        return nameShelf;
     }
 
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
+    public void setNameProduct(String nameShelf) {
+        this.nameShelf = nameShelf;
     }
 
     public int getLot() {

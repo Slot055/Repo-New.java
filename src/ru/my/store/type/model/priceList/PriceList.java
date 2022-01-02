@@ -1,6 +1,7 @@
 package ru.my.store.type.model.priceList;
 
 import ru.my.store.type.model.product.Product;
+import ru.my.store.type.model.shelf.Shelf;
 
 public class PriceList extends Product {
 

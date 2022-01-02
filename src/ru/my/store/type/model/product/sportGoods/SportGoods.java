@@ -16,6 +16,7 @@ public class SportGoods extends Product {
     private double guaranteePeriod;
     private String manufacturer;
     private Staff staff;
+    private ShelfOfSportGoods shelfOfSportGoods;
 
 
     public SportGoods(String name, double price, int item, String matter, String purposeOfGood, String color,
@@ -32,7 +33,6 @@ public class SportGoods extends Product {
     public SportGoods() {
     }
 
-    ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Мяч", 10, 10, 0);
 
     ShopAssistant shopAssistant = new ShopAssistant("Виктор", "продавец консультант отдела Спортивных товаров",
             5);
@@ -42,10 +42,11 @@ public class SportGoods extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Спортивных продуктов" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
-        Ball topBall = new Ball("Мяч футбольный", 1500.00, 12345, "Кожа", "Футбол",
+
+        Ball topBall = new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
                 "Мультиколор", 5, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый");
         shopAssistant.advises(scanner, priceListOfSportGoods);
-        shopAssistant.helpsWithTheChoice(scanner, topBall, priceListOfSportGoods);
+        shopAssistant.helpsWithTheChoice(scanner, topBall,priceListOfSportGoods,shelfOfSportGoods);
     }
 
 

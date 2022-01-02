@@ -24,7 +24,7 @@ public class Ball extends SportGoods {
         System.out.println("Наименование товара: " + getName() + "\n" + "Цена: " + getPrice() + "\n" + "Артикул: " + getItem() + "\n" +
                 "Материал: " + getMatter() + "\n" + "Назначение: " + getPurposeOfGood() + "\n" + "Цвет: " + getColor() + "\n" +
                 "Гарантийный срок: " + getGuaranteePeriod() + " лет" + "\n" + "Страна производитель: " + getManufacturer() + "\n" +
-                "Размер: " + size + "\n" + "Вес: " + weight + " кг" + "\n" + "Бренд: " + brand + "\n" + "Форма: " + shape);
+                "Тип: " + getType() + "\n" +"Размер: " + size + "\n" + "Вес: " + weight + " кг" + "\n" + "Бренд: " + brand + "\n" + "Форма: " + shape);
 
 
     }
@@ -36,6 +36,7 @@ public class Ball extends SportGoods {
     public void testGood() {
         System.out.println("Мяч протестирован");
     }
+
 
     public String getType() {
         return type;

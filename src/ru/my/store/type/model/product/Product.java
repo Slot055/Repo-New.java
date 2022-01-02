@@ -1,5 +1,6 @@
 package ru.my.store.type.model.product;
 
+import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.shelf.Shelf;
 
@@ -11,6 +12,7 @@ public class Product {
     private int item;
     private Shelf shelf;
     private PriceList priceList;
+    private Basket basket;
 
     public Product(String name, double price, int item) {
         this.name = name;
@@ -37,10 +39,15 @@ public class Product {
         System.out.println("Выбрали товар");
     }
 
+    @Override
+    public String toString() {
+        return "Артикул: " + item + " / " + "Наименование: " + name + " / " + "Цена: " + price;
+    }
 
     public void takeFromTheShelf(Shelf shelf) {
 
         System.out.println("Взяли товар с полки");
+        putOnBasket();
     }
 
 
@@ -105,5 +112,13 @@ public class Product {
 
     public void setPriceList(PriceList priceList) {
         this.priceList = priceList;
+    }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 }
