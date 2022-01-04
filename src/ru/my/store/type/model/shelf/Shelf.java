@@ -1,10 +1,13 @@
 package ru.my.store.type.model.shelf;
 
+
 import ru.my.store.type.model.product.Product;
+
+
 
 public class Shelf {
 
-    public Product[] productOnTheShelf = new Product[10];
+
     private String nameShelf;
     private int maxLot;
     private int lot;
@@ -23,6 +26,8 @@ public class Shelf {
     public Shelf() {
 
     }
+
+    public Product[] productOnTheShelf = {new Product(),new Product(),new Product(),new Product(),new Product()};
 
     public void coming() {
         System.out.println("Приход товара");

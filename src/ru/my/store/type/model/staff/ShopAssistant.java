@@ -13,6 +13,7 @@ public class ShopAssistant extends Staff {
     private PriceList priceList;
     private Product product;
     private Shelf shelf;
+    private Basket basket;
 
 
     public ShopAssistant(String name, String position, double expirience) {
@@ -55,6 +56,7 @@ public class ShopAssistant extends Staff {
     public void helpsWithTheChoice(Scanner scanner, Product product, PriceList priceList,Shelf shelf) {
         System.out.println("Могу Вам посоветовать товар или нужно что то конкретное?:" + "\n" + "1 - Посоветовать "
                 + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - начать сначала");
+
         while (true) {
             int a = scanner.nextInt();
             if (a == 1) {
@@ -69,7 +71,8 @@ public class ShopAssistant extends Staff {
                 int b = scanner.nextInt();
                 if (b == 0) {
 
-                    product.takeFromTheShelf(shelf);
+
+                    product.takeFromTheShelf(product,shelf,priceList);
 
                 } else if (b == 1) {
 
@@ -82,8 +85,8 @@ public class ShopAssistant extends Staff {
 
                 break;
             } else {
-                System.out.println("Извините, не понял" + "\n" + "1 - Хотите получить информацию об активном ассортименте?"
-                        + "\n" + "2 - Хотите вернуться к выбору отделов?" + "\n" + "3 - Хотите уйти из магазина?");
+                System.out.println("Извините, не понял" + "\n" + "1 - Посоветовать "
+                        + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - начать сначала");
             }
         }
     }
@@ -112,6 +115,14 @@ public class ShopAssistant extends Staff {
 
     public void setShelf(Shelf shelf) {
         this.shelf = shelf;
+    }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 }
 

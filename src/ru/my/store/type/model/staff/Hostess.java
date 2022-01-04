@@ -1,6 +1,7 @@
 package ru.my.store.type.model.staff;
 
 import ru.my.store.type.OfflineStore;
+import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.product.alcohol.Alcohol;
 import ru.my.store.type.model.product.homeTechnics.HomeTechnics;
 import ru.my.store.type.model.product.sportGoods.SportGoods;
@@ -32,6 +33,7 @@ public class Hostess extends Staff {
         while (true) {
             System.out.println("В нашем магазине есть следующие отделы, выберете нужный, я расскажу как пройти: " + "\n" + "1 - Отдел - Алкоголь" + "\n" +
                     "2 - Отдел - Спортивные товары" + "\n" + "3 - Отдел - Бытовая техника" + "\n" + "4 - Выход из магазина");
+
             int a = scanner.nextInt();
             if (a == 1) {
                 System.out.println("Отдел Алкоголя находится слева от входа, проводить?");
@@ -88,12 +90,11 @@ public class Hostess extends Staff {
                 } else {
                     System.out.println("Такой команды нет, введите ответ из предложенного ранее варианта");
                 }
-            }else if (a == 4){
+            } else if (a == 4) {
                 sayGoodbye();
                 OfflineStore.exitOfStore();
 
-            }
-            else {
+            } else {
                 System.out.println("Такого отдела пока нет, выберете один из предложенных отделов");
             }
 

@@ -1,5 +1,6 @@
 package ru.my.store.type.model.product.sportGoods;
 
+import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceListOfSportGoods;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.ShelfOfSportGoods;

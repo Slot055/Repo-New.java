@@ -1,6 +1,7 @@
 package ru.my.store.type.model.priceList;
 
 import javafx.scene.chart.LineChart;
+import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.sportGoods.Ball;
 import ru.my.store.type.model.product.sportGoods.SportGoods;
 import ru.my.store.type.model.shelf.Shelf;
@@ -14,15 +15,15 @@ public class PriceListOfSportGoods extends PriceList {
     public PriceListOfSportGoods() {
     }
 
-    private SportGoods sportGoods;
+
     private ShelfOfSportGoods shelfOfSportGoods;
 
     public void print() {
         System.out.println("---------------------------------" + "\n" + "Прайс-лист спортивных товаров: " +
                 "\n" + "---------------------------------");
         ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10,10,0);
-        for (Ball ball : shelfOfSportGoods.productOnTheShelf)
-            System.out.println(ball.toString());
+        for (Product sportGoods : shelfOfSportGoods.productOnTheShelf)
+            System.out.println(sportGoods.toString());
         System.out.println("---------------------------------");
     }
 
@@ -34,11 +35,5 @@ public class PriceListOfSportGoods extends PriceList {
         this.shelfOfSportGoods = shelfOfSportGoods;
     }
 
-    public SportGoods getSportGoods() {
-        return sportGoods;
-    }
 
-    public void setSportGoods(SportGoods sportGoods) {
-        this.sportGoods = sportGoods;
-    }
 }

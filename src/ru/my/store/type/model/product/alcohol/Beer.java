@@ -12,7 +12,7 @@ public class Beer extends Alcohol{
     @Override
     public void infoTopProduct() {
         System.out.println("Наименование товара: " + getName() + "\n" + "Цена: " + getPrice() + "\n" + "Артикул: " + getItem() + "\n" +
-                "Срок годности: " + getExpirationDate() + "\n" + "Крепость: " + getSize() + "%" + "\n" + "Объём: " + getVolume() + " литров" + "\n" +
-                "Производитель: " + getManufacturer() + " лет" + "\n" + "Тара: " + getPack());
+                "Срок годности: " + getExpirationDate() + " лет"  + "\n" + "Крепость: " + getSize() + " %" + "\n" + "Объём: " + getVolume() + " литров" + "\n" +
+                "Производитель: " + getManufacturer() + "\n" + "Тара: " + getPack());
     }
 }

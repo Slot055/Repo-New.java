@@ -14,10 +14,20 @@ public class Basket {
     private Shelf shelf;
     private PriceList priceList;
 
+    public Basket(String nameBasket, int numBasket, int maxLot, int lot, int freeSpace) {
+        this.nameBasket = nameBasket;
+        this.numBasket = numBasket;
+        this.maxLot = maxLot;
+        this.lot = lot;
+        this.freeSpace = freeSpace;
+
+    }
+
     public Basket() {
     }
 
-    public Product[] basket = new Product[5];
+    public Product[] basket = {new Product(),new Product(),new Product(),new Product(),new Product()};
+
 
     public String getNameBasket() {
         return nameBasket;

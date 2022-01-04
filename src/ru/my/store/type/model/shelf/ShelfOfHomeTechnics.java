@@ -1,5 +1,6 @@
 package ru.my.store.type.model.shelf;
 
+import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.homeTechnics.HomeTechnics;
 import ru.my.store.type.model.product.homeTechnics.Teapot;
 
@@ -12,7 +13,7 @@ public class ShelfOfHomeTechnics extends Shelf {
     public ShelfOfHomeTechnics() {
 
     }
-    public Teapot[] productOnTheShelf = {new Teapot("Чайник электричекский", 1700.00, 123789, "Электрический", "Белый",
+    public Product[] productOnTheShelf = {new Teapot("Чайник электрический", 1700.00, 123789, "Электрический", "Белый",
             2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10),
             new Teapot("Чайник электрический", 1450.00, 123788, "Электрический", "Мультиколор",
             1.0, "Китай", "Ссылка на сайте www.eldorado.ru", 9),

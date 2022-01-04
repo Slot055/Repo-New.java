@@ -2,8 +2,11 @@ package ru.my.store.type.model.product;
 
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
+import ru.my.store.type.model.product.sportGoods.Ball;
 import ru.my.store.type.model.shelf.Shelf;
+import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Product {
@@ -44,10 +47,16 @@ public class Product {
         return "Артикул: " + item + " / " + "Наименование: " + name + " / " + "Цена: " + price;
     }
 
-    public void takeFromTheShelf(Shelf shelf) {
+    public void takeFromTheShelf(Product product,Shelf shelf,PriceList priceList) {
 
-        System.out.println("Взяли товар с полки");
-        putOnBasket();
+        System.out.println("Взяли " + getName() + " с полки");
+
+        Basket basket = new Basket("Корзина", 1, 5,0,5);
+        basket.basket = Arrays.copyOfRange(shelf.productOnTheShelf, 1, 3);
+
+        System.out.println(product.toString());
+
+        putOnBasket(product);
     }
 
 
@@ -56,9 +65,9 @@ public class Product {
         System.out.println("Положили товар на полку");
     }
 
-    public void putOnBasket() {
+    public void putOnBasket(Product product) {
 
-        System.out.println("товар в корзине");
+        System.out.println(getName() + " в корзине");
     }
 
     public void removeFromBasket() {
