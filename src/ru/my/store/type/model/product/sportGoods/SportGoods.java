@@ -34,10 +34,12 @@ public class SportGoods extends Product {
     public SportGoods() {
     }
 
+    ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Мяч", 10, 10, 0);
 
     ShopAssistant shopAssistant = new ShopAssistant("Виктор", "продавец консультант отдела Спортивных товаров",
             5);
     PriceListOfSportGoods priceListOfSportGoods = new PriceListOfSportGoods("Мяч", 500.00, 123);
+
 
 
     public void welcome(Scanner scanner) {
@@ -56,6 +58,7 @@ public class SportGoods extends Product {
         System.out.println("Можем перейти к выбору продукта: " + "\n" + "---------------------------------");
         System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName() + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
     }
+
 
 
     public void testGood() {

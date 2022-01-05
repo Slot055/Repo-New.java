@@ -9,6 +9,8 @@ import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Product {
     private String name;
     private double price;
