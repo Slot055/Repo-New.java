@@ -1,8 +1,8 @@
 package ru.my.store.type.model.shelf;
 
 
+import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
-
 
 
 public class Shelf {
@@ -13,7 +13,6 @@ public class Shelf {
     private int lot;
     private int freeSpace;
     private Product product;
-
 
 
     public Shelf(String nameShelf, int maxLot, int lot, int freeSpace) {
@@ -27,7 +26,8 @@ public class Shelf {
 
     }
 
-    public Product[] productOnTheShelf = {new Product(),new Product(),new Product(),new Product(),new Product()};
+    public Product[] productOnTheShelf = {new Product(), new Product(), new Product(), new Product(), new Product()};
+
 
     public void coming() {
         System.out.println("Приход товара");

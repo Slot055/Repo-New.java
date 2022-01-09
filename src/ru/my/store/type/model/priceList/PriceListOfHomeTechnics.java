@@ -21,7 +21,7 @@ public class PriceListOfHomeTechnics extends PriceList {
     public void print(){
         System.out.println("---------------------------------" + "\n" + "Прайс-лист бытовой техники: " +
                 "\n" + "---------------------------------");
-        ShelfOfHomeTechnics shelfOfHomeTechnics = new ShelfOfHomeTechnics("Полка 2", 10,10,0);
+        ShelfOfHomeTechnics shelfOfHomeTechnics = new ShelfOfHomeTechnics("Полка 2", 10,4,6);
         for (Product homeTechnics : shelfOfHomeTechnics.productOnTheShelf)
             System.out.println(homeTechnics.toString());
         System.out.println("---------------------------------");

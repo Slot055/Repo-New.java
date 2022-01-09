@@ -21,7 +21,7 @@ public class PriceListOfSportGoods extends PriceList {
     public void print() {
         System.out.println("---------------------------------" + "\n" + "Прайс-лист спортивных товаров: " +
                 "\n" + "---------------------------------");
-        ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10,10,0);
+        ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10,5,5);
         for (Product sportGoods : shelfOfSportGoods.productOnTheShelf)
             System.out.println(sportGoods.toString());
         System.out.println("---------------------------------");

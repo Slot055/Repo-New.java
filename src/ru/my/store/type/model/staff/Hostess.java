@@ -2,6 +2,8 @@ package ru.my.store.type.model.staff;
 
 import ru.my.store.type.OfflineStore;
 import ru.my.store.type.model.basket.Basket;
+import ru.my.store.type.model.moneyKassa.MoneyKassa;
+import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.alcohol.Alcohol;
 import ru.my.store.type.model.product.homeTechnics.HomeTechnics;
 import ru.my.store.type.model.product.sportGoods.SportGoods;
@@ -12,6 +14,7 @@ public class Hostess extends Staff {
     private SportGoods sportGoods;
     private HomeTechnics homeTechnics;
     private Alcohol alcohol;
+    private MoneyKassa moneyKassa;
 
     public Hostess(String name, String position, double expirience) {
         super(name, position, expirience);
@@ -101,10 +104,16 @@ public class Hostess extends Staff {
         }
     }
 
+    public void escortsToMoneyKassa(Basket basket) {
+        moneyKassa = new MoneyKassa(1);
+        moneyKassa.welcomeToKassa(basket);
+    }
+
     @Override
     public void sayGoodbye() {
         System.out.println("До свидания, ждём Вас снова в нашем магазине");
     }
+
 
     public SportGoods getSportGoods() {
         return sportGoods;
@@ -128,6 +137,14 @@ public class Hostess extends Staff {
 
     public void setAlcohol(Alcohol alcohol) {
         this.alcohol = alcohol;
+    }
+
+    public MoneyKassa getMoneyKassa() {
+        return moneyKassa;
+    }
+
+    public void setMoneyKassa(MoneyKassa moneyKassa) {
+        this.moneyKassa = moneyKassa;
     }
 }
 

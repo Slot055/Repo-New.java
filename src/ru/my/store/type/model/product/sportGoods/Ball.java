@@ -7,7 +7,8 @@ public class Ball extends SportGoods {
     private String brand;
     private String shape;
 
-    public Ball(String name, double price, int item, String matter, String purposeOfGood, String color, double guaranteePeriod, String manufacturer, String type, String size, double weight, String brand, String shape) {
+    public Ball(String name, double price, int item, String matter, String purposeOfGood, String color, double guaranteePeriod,
+                String manufacturer, String type, String size, double weight, String brand, String shape) {
         super(name, price, item, matter, purposeOfGood, color, guaranteePeriod, manufacturer);
         this.type = type;
         this.size = size;

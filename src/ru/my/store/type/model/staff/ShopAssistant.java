@@ -52,10 +52,10 @@ public class ShopAssistant extends Staff {
         }
     }
 
-
-    public void helpsWithTheChoice(Scanner scanner, Product product, PriceList priceList,Shelf shelf) {
+    public void helpsWithTheChoice(Scanner scanner, Product product, PriceList priceList, Shelf shelf) {
         System.out.println("Могу Вам посоветовать товар или нужно что то конкретное?:" + "\n" + "1 - Посоветовать "
                 + "\n" + "2 - Выбрать самостоятельно из текущего ассортимента" + "\n" + "3 - начать сначала");
+
 
         while (true) {
             int a = scanner.nextInt();
@@ -63,21 +63,11 @@ public class ShopAssistant extends Staff {
                 System.out.println("Хочу обратить Ваше внимание на данный экземпляр: ");
                 product.infoTopProduct();
                 System.out.println("---------------------------------");
-                product.choiceProduct();
+                product.choiceProduct(scanner, shelf, priceList);
                 break;
             } else if (a == 2) {
-                priceList.print();
-                System.out.println("Введите нужный артикул из ассортимента: ");
-                int b = scanner.nextInt();
-                if (b == 0) {
-
-
-                    product.takeFromTheShelf(product,shelf,priceList);
-
-                } else if (b == 1) {
-
-                    System.out.println("Отличный выбор, " + product.toString() + " в корзине");
-                }
+                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора наберите 10 : ");
+                product.takeFromTheShelf(scanner, shelf, priceList);
                 break;
             } else if (a == 3) {
 

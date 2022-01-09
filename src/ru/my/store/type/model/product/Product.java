@@ -1,11 +1,14 @@
 package ru.my.store.type.model.product;
 
+import com.oracle.xmlns.internal.webservices.jaxws_databinding.XmlOneway;
 import ru.my.store.type.model.basket.Basket;
+import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.sportGoods.Ball;
 import ru.my.store.type.model.shelf.Shelf;
 import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 
+import javax.management.modelmbean.ModelMBean;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -19,6 +22,7 @@ public class Product {
     private PriceList priceList;
     private Basket basket;
 
+
     public Product(String name, double price, int item) {
         this.name = name;
         this.price = price;
@@ -29,7 +33,6 @@ public class Product {
     public Product() {
     }
 
-
     public void welcome(Scanner scanner) {
 
         System.out.println("Встречает продавец консультант");
@@ -39,7 +42,7 @@ public class Product {
         System.out.println("Наименование товара: " + name + "\n" + "Цена: " + price + "\n" + "Артикул: " + item);
     }
 
-    public void choiceProduct() {
+    public void choiceProduct(Scanner scanner, Shelf shelf, PriceList priceList) {
 
         System.out.println("Выбрали товар");
     }
@@ -49,16 +52,11 @@ public class Product {
         return "Артикул: " + item + " / " + "Наименование: " + name + " / " + "Цена: " + price;
     }
 
-    public void takeFromTheShelf(Product product,Shelf shelf,PriceList priceList) {
+    public void takeFromTheShelf(Scanner scanner,Shelf shelf, PriceList priceList) {
 
         System.out.println("Взяли " + getName() + " с полки");
 
-        Basket basket = new Basket("Корзина", 1, 5,0,5);
-        basket.basket = Arrays.copyOfRange(shelf.productOnTheShelf, 1, 3);
-
-        System.out.println(product.toString());
-
-        putOnBasket(product);
+        putOnBasket(scanner,shelf,basket);
     }
 
 
@@ -67,7 +65,7 @@ public class Product {
         System.out.println("Положили товар на полку");
     }
 
-    public void putOnBasket(Product product) {
+    public void putOnBasket(Scanner scanner, Shelf shelf, Basket basket) {
 
         System.out.println(getName() + " в корзине");
     }
@@ -80,6 +78,10 @@ public class Product {
     public void buy() {
 
         System.out.println("Товар куплен");
+    }
+    public void goToMoneyKassa(Scanner scanner, Basket basket){
+
+        System.out.println("Пройти на кассу");
     }
 
     public String getName() {

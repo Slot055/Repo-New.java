@@ -21,7 +21,7 @@ public class PriceListOfAlcohol extends PriceList {
     public void print() {
         System.out.println("---------------------------------" + "\n" + "Прайс-лист алкоголя: " +
                 "\n" + "---------------------------------");
-        ShelfOfAlcohol shelfOfAlcohol = new ShelfOfAlcohol("Полка 3", 10,10,0);
+        ShelfOfAlcohol shelfOfAlcohol = new ShelfOfAlcohol("Полка 3", 10,4,6);
         for (Product alcohol : shelfOfAlcohol.productOnTheShelf)
             System.out.println(alcohol.toString());
         System.out.println("---------------------------------");
