@@ -6,7 +6,6 @@ import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.priceList.PriceListOfAlcohol;
 import ru.my.store.type.model.shelf.Shelf;
 import ru.my.store.type.model.shelf.ShelfOfAlcohol;
-import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.Staff;
 import ru.my.store.type.model.staff.ShopAssistant;
@@ -43,10 +42,14 @@ public class Alcohol extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Алкоголь" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
-        Beer topBeer = new Beer("Пиво Жигулёвское", 75.00, 123321, 10, 5.8, 0.5, "Россия", "Стекло");
-        shopAssistant.advises(scanner, priceListOfAlcohol);
-        shopAssistant.helpsWithTheChoice(scanner, topBeer, priceListOfAlcohol, shelfOfAlcohol);
+        Product topBeer = new Beer("Пиво Жигулёвское", 75.00, 123321, 10, 5.8, 0.5, "Россия", "Стекло");
+        shopAssistant.advises(scanner, priceListOfAlcohol, topBeer);
 
+    }
+
+    @Override
+    public void helpShopAssistant(Scanner scanner, Shelf shelf, PriceList priceList, Product topBeer) {
+        shopAssistant.helpsWithTheChoice(scanner, topBeer, priceListOfAlcohol, shelfOfAlcohol);
     }
 
     @Override
@@ -67,7 +70,7 @@ public class Alcohol extends Product {
                 goToMoneyKassa(scanner, basket3);
                 break;
             } else if (a == 2) {
-                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора наберите 10 : ");
+                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
                 putOnBasket(scanner, shelfOfAlcohol1, basket3);
                 break;
             } else {
@@ -122,7 +125,7 @@ public class Alcohol extends Product {
                 for (Product sum : basket3.basket)
                     System.out.println(sum.toString());
 
-            } else if (b == 10) {
+            } else if (b == 99) {
                 goToMoneyKassa(scanner, basket3);
                 break;
 
@@ -144,7 +147,7 @@ public class Alcohol extends Product {
                 hostess.escortsToMoneyKassa(basket3);
                 break;
             } else if (c == 2) {
-               welcome(scanner);
+                welcome(scanner);
                 break;
             } else {
                 System.out.println("Такой команды нет" + "\n" + "1 - Пройти на кассу" + "\n" + "2 - Воспользоваться помощью продавца консультанта");

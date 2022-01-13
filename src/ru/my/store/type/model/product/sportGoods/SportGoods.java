@@ -1,6 +1,6 @@
 package ru.my.store.type.model.product.sportGoods;
 
-import ru.my.store.type.OfflineStore;
+
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.priceList.PriceList;
@@ -52,13 +52,16 @@ public class SportGoods extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Спортивных продуктов" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
-
-        Ball topBall = new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
+        Product topBall = new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
                 "Мультиколор", 5, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый");
-        shopAssistant.advises(scanner, priceListOfSportGoods);
-        shopAssistant.helpsWithTheChoice(scanner, topBall, priceListOfSportGoods, shelfOfSportGoods);
+        shopAssistant.advises(scanner, priceListOfSportGoods, topBall);
+
     }
 
+    public void helpShopAssistant(Scanner scanner, Shelf shelf, PriceList priceList, Product topBall) {
+
+        shopAssistant.helpsWithTheChoice(scanner, topBall, priceListOfSportGoods, shelfOfSportGoods);
+    }
 
     @Override
     public void choiceProduct(Scanner scanner, Shelf shelf, PriceList priceList) {
@@ -78,7 +81,7 @@ public class SportGoods extends Product {
                 goToMoneyKassa(scanner, basket1);
                 break;
             } else if (a == 2) {
-                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора наберите 10 : ");
+                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
                 putOnBasket(scanner, shelfOfSportGoods1, basket1);
                 break;
             } else {
@@ -131,7 +134,7 @@ public class SportGoods extends Product {
                 for (Product sum : basket1.basket)
                     System.out.println(sum.toString());
 
-            } else if (b == 10) {
+            } else if (b == 99) {
                 goToMoneyKassa(scanner, basket1);
                 break;
             } else {
