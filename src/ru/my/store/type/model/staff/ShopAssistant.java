@@ -5,8 +5,6 @@ import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.Shelf;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShopAssistant extends Staff {
@@ -29,13 +27,14 @@ public class ShopAssistant extends Staff {
 
     }
 
-    public void advises(Scanner scanner, PriceList priceList) {
+    public void advises(Scanner scanner, PriceList priceList,Product product) {
         System.out.println("1 - Хотите получить информацию об активном ассортименте?" + "\n" +
                 "2 - Хотите вернуться к выбору отделов?" + "\n" + "3 - Хотите уйти из магазина?");
         while (true) {
             int a = scanner.nextInt();
             if (a == 1) {
                 priceList.print();
+                product.helpShopAssistant(scanner,shelf,priceList,product);
                 break;
             } else if (a == 2) {
 
@@ -66,7 +65,7 @@ public class ShopAssistant extends Staff {
                 product.choiceProduct(scanner, shelf, priceList);
                 break;
             } else if (a == 2) {
-                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора наберите 10 : ");
+                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
                 product.takeFromTheShelf(scanner, shelf, priceList);
                 break;
             } else if (a == 3) {

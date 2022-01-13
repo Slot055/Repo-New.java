@@ -6,7 +6,6 @@ import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.priceList.PriceListOfHomeTechnics;
 import ru.my.store.type.model.shelf.Shelf;
 import ru.my.store.type.model.shelf.ShelfOfHomeTechnics;
-import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.Staff;
 import ru.my.store.type.model.staff.ShopAssistant;
@@ -45,9 +44,14 @@ public class HomeTechnics extends Product {
     public void welcome(Scanner scanner) {
         System.out.println("Добро пожаловать в отдел Бытовой техники" + "\n" + "---------------------------------");
         shopAssistant.sayHello();
-        Teapot topTeapot = new Teapot("Чайник электрический", 1700.00, 123789, "Электрический", "Белый",
+        Product topTeapot = new Teapot("Чайник электрический", 1700.00, 123789, "Электрический", "Белый",
                 2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10);
-        shopAssistant.advises(scanner, priceListOfHomeTechnics);
+        shopAssistant.advises(scanner, priceListOfHomeTechnics,topTeapot);
+
+    }
+
+    @Override
+    public void helpShopAssistant(Scanner scanner, Shelf shelf, PriceList priceList, Product topTeapot) {
         shopAssistant.helpsWithTheChoice(scanner, topTeapot, priceListOfHomeTechnics, shelfOfHomeTechnics);
     }
 
@@ -69,7 +73,7 @@ public class HomeTechnics extends Product {
                 goToMoneyKassa(scanner, basket2);
                 break;
             } else if (a == 2) {
-                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора наберите 10 : ");
+                System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
                 putOnBasket(scanner, shelfOfHomeTechnics2, basket2);
                 break;
             } else {
@@ -123,7 +127,7 @@ public class HomeTechnics extends Product {
                 for (Product sum : basket2.basket)
                     System.out.println(sum.toString());
 
-            } else if (b == 10) {
+            } else if (b == 99) {
                 goToMoneyKassa(scanner, basket2);
                 break;
 

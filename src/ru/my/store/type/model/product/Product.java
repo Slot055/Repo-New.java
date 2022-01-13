@@ -38,6 +38,12 @@ public class Product {
         System.out.println("Встречает продавец консультант");
     }
 
+    public void helpShopAssistant(Scanner scanner, Shelf shelf, PriceList priceList, Product topProduct) {
+
+        System.out.println("Помощь Консультанта");
+
+    }
+
     public void infoTopProduct() {
         System.out.println("Наименование товара: " + name + "\n" + "Цена: " + price + "\n" + "Артикул: " + item);
     }
@@ -52,11 +58,11 @@ public class Product {
         return "Артикул: " + item + " / " + "Наименование: " + name + " / " + "Цена: " + price;
     }
 
-    public void takeFromTheShelf(Scanner scanner,Shelf shelf, PriceList priceList) {
+    public void takeFromTheShelf(Scanner scanner, Shelf shelf, PriceList priceList) {
 
         System.out.println("Взяли " + getName() + " с полки");
 
-        putOnBasket(scanner,shelf,basket);
+        putOnBasket(scanner, shelf, basket);
     }
 
 
@@ -79,7 +85,8 @@ public class Product {
 
         System.out.println("Товар куплен");
     }
-    public void goToMoneyKassa(Scanner scanner, Basket basket){
+
+    public void goToMoneyKassa(Scanner scanner, Basket basket) {
 
         System.out.println("Пройти на кассу");
     }
