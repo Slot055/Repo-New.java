@@ -5,8 +5,7 @@ import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.product.Product;
 
-import java.util.Arrays;
-
+import java.util.*;
 
 
 public class Cashier extends Staff {
@@ -25,14 +24,15 @@ public class Cashier extends Staff {
         System.out.println("Здравствуйте, я " + getPosition() + ", меня зовут  " + getName());
     }
 
-    public void payment(Product[] basket) {
+    public void payment(List<Product> basket) {
 
         System.out.println("Товары в корзине: " + "\n" + "---------------------------------");
+
         for (Product sum : basket)
             System.out.println(sum.getName() + " - " + sum.getPrice() + " рублей");
 
 
-        double summ = Arrays.stream(basket)
+        double summ = basket.stream()
                 .map(Product::getPrice)
                 .reduce(Double::sum)
                 .orElse(0.00);

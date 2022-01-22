@@ -69,20 +69,20 @@ public class SportGoods extends Product {
         System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName()
                 + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
         while (true) {
-            ShelfOfSportGoods shelfOfSportGoods1 = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
-            for (Product sportGoods : shelfOfSportGoods1.productOnTheShelf) ;
-            Basket basket1 = new Basket("Корзина", 1, 5, 0, 5);
+            ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
+            for (Product sportGoods : shelfOfSportGoods.productOnTheShelf) ;
+            Basket basket = new Basket("Корзина", 1, 5, 0, 5);
 
             int a = scanner.nextInt();
             if (a == 1) {
-                basket1.basket = Arrays.copyOfRange(shelfOfSportGoods1.productOnTheShelf, 0, 1);
-                for (Product sum : basket1.basket)
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(0));
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
-                goToMoneyKassa(scanner, basket1);
+                goToMoneyKassa(scanner, basket);
                 break;
             } else if (a == 2) {
                 System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
-                putOnBasket(scanner, shelfOfSportGoods1, basket1);
+                putOnBasket(scanner, shelfOfSportGoods, basket);
                 break;
             } else {
                 System.out.println("Извините, не понял" + "\n" + "1 - Выбрать " + getName() + " по совету " +
@@ -96,46 +96,46 @@ public class SportGoods extends Product {
 
     @Override
     public void takeFromTheShelf(Scanner scanner, Shelf shelf, PriceList priceList) {
-        ShelfOfSportGoods shelfOfSportGoods1 = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
-        Basket basket1 = new Basket("Корзина", 1, 5, 0, 5);
-        putOnBasket(scanner, shelfOfSportGoods1, basket1);
+        ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
+        Basket basket = new Basket("Корзина", 1, 5, 0, 5);
+        putOnBasket(scanner, shelfOfSportGoods, basket);
     }
 
-    public void putOnBasket(Scanner scanner, ShelfOfSportGoods shelfOfSportGoods1, Basket basket1) {
+    public void putOnBasket(Scanner scanner, ShelfOfSportGoods shelfOfSportGoods, Basket basket) {
         while (true) {
             int b = scanner.nextInt();
             if (b == 0) {
-                basket1.basket[0] = shelfOfSportGoods1.productOnTheShelf[0];
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(0));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket1.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 1) {
-                basket1.basket[1] = shelfOfSportGoods1.productOnTheShelf[1];
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(1));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket1.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 2) {
-                basket1.basket[2] = shelfOfSportGoods1.productOnTheShelf[2];
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(2));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket1.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 3) {
-                basket1.basket[3] = shelfOfSportGoods1.productOnTheShelf[3];
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(3));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket1.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 4) {
-                basket1.basket[4] = shelfOfSportGoods1.productOnTheShelf[4];
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(4));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket1.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 99) {
-                goToMoneyKassa(scanner, basket1);
+                goToMoneyKassa(scanner, basket);
                 break;
             } else {
                 System.out.println("Такого артикула пока нет, выберете артикул из ассортимента");

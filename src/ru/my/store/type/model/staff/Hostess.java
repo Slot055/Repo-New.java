@@ -3,7 +3,6 @@ package ru.my.store.type.model.staff;
 import ru.my.store.type.OfflineStore;
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.moneyKassa.MoneyKassa;
-import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.alcohol.Alcohol;
 import ru.my.store.type.model.product.homeTechnics.HomeTechnics;
 import ru.my.store.type.model.product.sportGoods.SportGoods;

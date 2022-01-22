@@ -3,8 +3,6 @@ package ru.my.store.type.model.staff;
 import ru.my.store.type.OfflineStore;
 import ru.my.store.type.model.product.Product;
 
-import java.util.Scanner;
-
 public class Staff {
     private int quantity;
     private String name;

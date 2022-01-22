@@ -68,7 +68,6 @@ public class OfflineStore {
         Hostess hostess = new Hostess("Оксана", "Хостесс", 2);
         hostess.sayHello();
         hostess.escortsToTheDepartment(scanner);
-        System.out.println("---------------------------------");
 
     }
 

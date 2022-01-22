@@ -1,7 +1,6 @@
 package ru.my.store.type.model.priceList;
 
 import ru.my.store.type.model.product.Product;
-import ru.my.store.type.model.product.alcohol.Alcohol;
 
 import ru.my.store.type.model.shelf.ShelfOfAlcohol;
 

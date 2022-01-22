@@ -1,11 +1,9 @@
 package ru.my.store.type.model.shelf;
 
-
-import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
 
 
-public class Shelf {
+public abstract class Shelf {
 
 
     private String nameShelf;
@@ -26,18 +24,9 @@ public class Shelf {
 
     }
 
-    public Product[] productOnTheShelf = {new Product(), new Product(), new Product(), new Product(), new Product()};
+    public abstract void coming();
 
-
-    public void coming() {
-        System.out.println("Приход товара");
-
-    }
-
-    public void outlay() {
-        System.out.println("Расход товара");
-
-    }
+    public abstract void outlay();
 
     public int getMaxLot() {
         return maxLot;

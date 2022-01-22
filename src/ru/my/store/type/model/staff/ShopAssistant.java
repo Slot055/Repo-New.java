@@ -27,7 +27,7 @@ public class ShopAssistant extends Staff {
 
     }
 
-    public void advises(Scanner scanner, PriceList priceList,Product product) {
+    public void advises(Scanner scanner, PriceList priceList, Product product) {
         System.out.println("1 - Хотите получить информацию об активном ассортименте?" + "\n" +
                 "2 - Хотите вернуться к выбору отделов?" + "\n" + "3 - Хотите уйти из магазина?");
         while (true) {

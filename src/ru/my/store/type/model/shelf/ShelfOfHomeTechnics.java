@@ -3,6 +3,8 @@ package ru.my.store.type.model.shelf;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.homeTechnics.HomeTechnics;
 import ru.my.store.type.model.product.homeTechnics.Teapot;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShelfOfHomeTechnics extends Shelf {
     private HomeTechnics homeTechnics;
@@ -15,17 +17,21 @@ public class ShelfOfHomeTechnics extends Shelf {
 
     }
 
-    public Product[] productOnTheShelf = {new Teapot("Чайник электрический", 1700.00, 0, "Электрический", "Белый",
-            2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10),
-            new Teapot("Чайник электрический", 1450.00, 1, "Электрический", "Мультиколор",
-                    1.0, "Китай", "Ссылка на сайте www.eldorado.ru", 9),
-            new Teapot("Чайник для плиты", 1300.00, 2, "Для плиты", "Металлик",
-                    2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8),
-            new Teapot("Чайник походный", 1900.00, 3, "Походный", "Чёрный",
-                    2.0, "Россия", "Ссылка на сайте www.eldorado.ru", 10),
-            new Teapot("Чайник походный", 1850.00, 4, "Походный", "Серый",
-                    2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8)};
+    public List<Product> productOnTheShelf = new ArrayList<>();
 
+    {
+        productOnTheShelf.add(new Teapot("Чайник электрический", 1700.00, 0, "Электрический", "Белый",
+                2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10));
+        productOnTheShelf.add(new Teapot("Чайник электрический", 1450.00, 1, "Электрический", "Мультиколор",
+                1.0, "Китай", "Ссылка на сайте www.eldorado.ru", 9));
+        productOnTheShelf.add(new Teapot("Чайник для плиты", 1300.00, 2, "Для плиты", "Металлик",
+                2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8));
+        productOnTheShelf.add(new Teapot("Чайник походный", 1900.00, 3, "Походный", "Чёрный",
+                2.0, "Россия", "Ссылка на сайте www.eldorado.ru", 10));
+        productOnTheShelf.add(new Teapot("Чайник походный", 1850.00, 4, "Походный", "Серый",
+                2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8));
+
+    }
 
     @Override
     public void coming() {

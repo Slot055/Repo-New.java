@@ -1,18 +1,10 @@
 package ru.my.store.type.model.product;
 
-import com.oracle.xmlns.internal.webservices.jaxws_databinding.XmlOneway;
 import ru.my.store.type.model.basket.Basket;
-import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.priceList.PriceList;
-import ru.my.store.type.model.product.sportGoods.Ball;
 import ru.my.store.type.model.shelf.Shelf;
-import ru.my.store.type.model.shelf.ShelfOfSportGoods;
-
-import javax.management.modelmbean.ModelMBean;
-import java.util.Arrays;
 import java.util.Scanner;
 
-import java.util.Scanner;
 
 public class Product {
     private String name;

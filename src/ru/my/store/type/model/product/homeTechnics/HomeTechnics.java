@@ -61,20 +61,20 @@ public class HomeTechnics extends Product {
         System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName()
                 + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
         while (true) {
-            ShelfOfHomeTechnics shelfOfHomeTechnics2 = new ShelfOfHomeTechnics("Полка 1", 10, 5, 5);
-            for (Product homeTechnics : shelfOfHomeTechnics2.productOnTheShelf) ;
-            Basket basket2 = new Basket("Корзина", 1, 5, 0, 5);
+            ShelfOfHomeTechnics shelfOfHomeTechnics = new ShelfOfHomeTechnics("Полка 1", 10, 5, 5);
+            for (Product homeTechnics : shelfOfHomeTechnics.productOnTheShelf) ;
+            Basket basket = new Basket("Корзина", 1, 5, 0, 5);
 
             int a = scanner.nextInt();
             if (a == 1) {
-                basket2.basket = Arrays.copyOfRange(shelfOfHomeTechnics2.productOnTheShelf, 0, 1);
-                for (Product sum : basket2.basket)
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(0));
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
-                goToMoneyKassa(scanner, basket2);
+                goToMoneyKassa(scanner, basket);
                 break;
             } else if (a == 2) {
                 System.out.println("Введите нужные артикулы из ассортимента, по окончанию выбора введите 99 : ");
-                putOnBasket(scanner, shelfOfHomeTechnics2, basket2);
+                putOnBasket(scanner, shelfOfHomeTechnics, basket);
                 break;
             } else {
                 System.out.println("Извините, не понял" + "\n" + "1 - Выбрать " + getName() + " по совету " +
@@ -88,47 +88,47 @@ public class HomeTechnics extends Product {
 
     @Override
     public void takeFromTheShelf(Scanner scanner, Shelf shelf, PriceList priceList) {
-        ShelfOfHomeTechnics shelfOfHomeTechnics1 = new ShelfOfHomeTechnics("Полка 2", 10, 5, 5);
-        Basket basket2 = new Basket("Корзина", 1, 5, 0, 5);
-        putOnBasket(scanner, shelfOfHomeTechnics1, basket2);
+        ShelfOfHomeTechnics shelfOfHomeTechnics = new ShelfOfHomeTechnics("Полка 2", 10, 5, 5);
+        Basket basket = new Basket("Корзина", 1, 5, 0, 5);
+        putOnBasket(scanner, shelfOfHomeTechnics, basket);
 
     }
 
-    public void putOnBasket(Scanner scanner, ShelfOfHomeTechnics shelfOfHomeTechnics1, Basket basket2) {
+    public void putOnBasket(Scanner scanner, ShelfOfHomeTechnics shelfOfHomeTechnics, Basket basket) {
         while (true) {
             int b = scanner.nextInt();
             if (b == 0) {
-                basket2.basket[0] = shelfOfHomeTechnics1.productOnTheShelf[0];
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(0));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket2.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 1) {
-                basket2.basket[1] = shelfOfHomeTechnics1.productOnTheShelf[1];
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(1));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket2.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 2) {
-                basket2.basket[2] = shelfOfHomeTechnics1.productOnTheShelf[2];
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(2));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket2.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 3) {
-                basket2.basket[3] = shelfOfHomeTechnics1.productOnTheShelf[3];
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(3));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket2.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 4) {
-                basket2.basket[4] = shelfOfHomeTechnics1.productOnTheShelf[4];
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(4));
                 System.out.println("Товары в корзине: ");
-                for (Product sum : basket2.basket)
+                for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 99) {
-                goToMoneyKassa(scanner, basket2);
+                goToMoneyKassa(scanner, basket);
                 break;
 
             } else {
@@ -138,7 +138,7 @@ public class HomeTechnics extends Product {
     }
 
     @Override
-    public void goToMoneyKassa(Scanner scanner, Basket basket2) {
+    public void goToMoneyKassa(Scanner scanner, Basket basket) {
         System.out.println("Товары в корзине" + "\n" + "1 - Пройти на кассу" + "\n" + "2 - Воспользоваться помощью продавца консультанта");
         while (true) {
             int c = scanner.nextInt();
@@ -146,7 +146,7 @@ public class HomeTechnics extends Product {
                 Hostess hostess = new Hostess("Марина", "Хостесс", 1);
                 System.out.println("Здравствуйте, я " + hostess.getPosition() + " меня зовут " +
                         hostess.getName() + " я провожу Вас на кассу" + "\n" + "---------------------------------");
-                hostess.escortsToMoneyKassa(basket2);
+                hostess.escortsToMoneyKassa(basket);
                 break;
             } else if (c == 2) {
                 welcome(scanner);

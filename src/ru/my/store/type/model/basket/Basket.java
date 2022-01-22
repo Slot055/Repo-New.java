@@ -4,6 +4,11 @@ import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.Shelf;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Basket {
     private String nameBasket;
     private int numBasket;
@@ -26,8 +31,12 @@ public class Basket {
     public Basket() {
     }
 
-    public Product[] basket = {new Product(),new Product(),new Product(),new Product(),new Product()};
+    public List<Product> basket = new ArrayList<>(5);
 
+    {
+        basket.add(new Product());
+
+    }
 
     public String getNameBasket() {
         return nameBasket;

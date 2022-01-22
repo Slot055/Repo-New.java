@@ -1,9 +1,10 @@
 package ru.my.store.type.model.shelf;
-
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.product.alcohol.Alcohol;
 import ru.my.store.type.model.product.alcohol.Beer;
-import ru.my.store.type.model.product.homeTechnics.Teapot;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ShelfOfAlcohol extends Shelf {
     private Alcohol alcohol;
@@ -15,11 +16,15 @@ public class ShelfOfAlcohol extends Shelf {
     public ShelfOfAlcohol() {
     }
 
-    public Product[] productOnTheShelf = {new Beer("Пиво Жигулёвское", 75.00, 0, 10, 5.8, 0.5, "Россия", "Стекло"),
-            new Beer("Пиво Bavaria", 97.00, 1, 7, 3.5, 0.5, "Germany", "Стекло"),
-            new Beer("Пиво Kozel", 80.00, 2, 8, 6.5, 0.5, "Czech", "Стекло"),
-            new Beer("Пиво Bud", 60.00, 3, 6, 4.7, 0.5, "Россия", "Стекло"),
-            new Beer("Пиво Оболонь", 70.00, 4, 6, 5.0, 0.5, "Украина", "Стекло")};
+    public List<Product> productOnTheShelf = new ArrayList<>();
+
+    {
+        productOnTheShelf.add(new Beer("Пиво Жигулёвское", 75.00, 0, 10, 5.8, 0.5, "Россия", "Стекло"));
+        productOnTheShelf.add(new Beer("Пиво Bavaria", 97.00, 1, 7, 3.5, 0.5, "Germany", "Стекло"));
+        productOnTheShelf.add(new Beer("Пиво Kozel", 80.00, 2, 8, 6.5, 0.5, "Czech", "Стекло"));
+        productOnTheShelf.add(new Beer("Пиво Bud", 60.00, 3, 6, 4.7, 0.5, "Россия", "Стекло"));
+        productOnTheShelf.add(new Beer("Пиво Оболонь", 70.00, 4, 6, 5.0, 0.5, "Украина", "Стекло"));
+    }
 
     @Override
     public void coming() {

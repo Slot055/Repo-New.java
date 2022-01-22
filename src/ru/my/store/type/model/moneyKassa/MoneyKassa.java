@@ -2,11 +2,8 @@ package ru.my.store.type.model.moneyKassa;
 
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.product.Product;
-import ru.my.store.type.model.product.sportGoods.Ball;
 import ru.my.store.type.model.staff.Cashier;
 import ru.my.store.type.model.staff.Staff;
-
-import java.util.Scanner;
 
 public class MoneyKassa {
     private int number;

@@ -1,10 +1,5 @@
 package ru.my.store.type.model.priceList;
-
-import javafx.scene.chart.LineChart;
 import ru.my.store.type.model.product.Product;
-import ru.my.store.type.model.product.sportGoods.Ball;
-import ru.my.store.type.model.product.sportGoods.SportGoods;
-import ru.my.store.type.model.shelf.Shelf;
 import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 
 public class PriceListOfSportGoods extends PriceList {

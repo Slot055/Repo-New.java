@@ -17,12 +17,7 @@ public class PriceList extends Product {
     private Shelf shelf;
 
     public void print() {
-        System.out.println("---------------------------------" + "\n" + "Прайс-лист: " +
-                "\n" + "---------------------------------");
-        Shelf shelf = new Shelf("Полка", 10, 10, 0);
-        for (Product product : shelf.productOnTheShelf)
-            System.out.println(product.toString());
-        System.out.println("---------------------------------");
+
     }
 
 
