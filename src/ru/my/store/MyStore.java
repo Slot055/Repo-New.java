@@ -1,6 +1,7 @@
 package ru.my.store;
-
+import org.jetbrains.annotations.NotNull;
 import ru.my.store.type.OfflineStore;
+import ru.my.store.type.model.CreateToObject;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -8,11 +9,10 @@ import java.util.Scanner;
 public class MyStore {
 
     public static void main(String[] args) {
-        Date date = new Date();
+        Date date = CreateToObject.createDate();
         System.out.println(date);
 
-        OfflineStore offlineStore = new OfflineStore("Ашан", 1000.0, "08:00-23:00",
-                "г. Москва", "8(800)123-45-67");
+        OfflineStore offlineStore = CreateToObject.createOfflineStore();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите текущее время в формате: (Часы)");
@@ -27,7 +27,6 @@ public class MyStore {
         }
 
     }
-
 
 }
 

@@ -5,6 +5,8 @@ import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.Shelf;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class ShopAssistant extends Staff {

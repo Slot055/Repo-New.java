@@ -16,14 +16,14 @@ public class ShelfOfAlcohol extends Shelf {
     public ShelfOfAlcohol() {
     }
 
-    public List<Product> productOnTheShelf = new ArrayList<>();
+    public List<Product> productOnTheShelfAlc = new ArrayList<>();
 
     {
-        productOnTheShelf.add(new Beer("Пиво Жигулёвское", 75.00, 0, 10, 5.8, 0.5, "Россия", "Стекло"));
-        productOnTheShelf.add(new Beer("Пиво Bavaria", 97.00, 1, 7, 3.5, 0.5, "Germany", "Стекло"));
-        productOnTheShelf.add(new Beer("Пиво Kozel", 80.00, 2, 8, 6.5, 0.5, "Czech", "Стекло"));
-        productOnTheShelf.add(new Beer("Пиво Bud", 60.00, 3, 6, 4.7, 0.5, "Россия", "Стекло"));
-        productOnTheShelf.add(new Beer("Пиво Оболонь", 70.00, 4, 6, 5.0, 0.5, "Украина", "Стекло"));
+        productOnTheShelfAlc.add(new Beer("Пиво Жигулёвское", 75.00, 0, 10, 5.8, 0.5, "Россия", "Стекло"));
+        productOnTheShelfAlc.add(new Beer("Пиво Bavaria", 97.00, 1, 7, 3.5, 0.5, "Germany", "Стекло"));
+        productOnTheShelfAlc.add(new Beer("Пиво Kozel", 80.00, 2, 8, 6.5, 0.5, "Czech", "Стекло"));
+        productOnTheShelfAlc.add(new Beer("Пиво Bud", 60.00, 3, 6, 4.7, 0.5, "Россия", "Стекло"));
+        productOnTheShelfAlc.add(new Beer("Пиво Оболонь", 70.00, 4, 6, 5.0, 0.5, "Украина", "Стекло"));
     }
 
     @Override

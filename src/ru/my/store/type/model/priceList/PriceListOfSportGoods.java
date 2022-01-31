@@ -2,6 +2,8 @@ package ru.my.store.type.model.priceList;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.ShelfOfSportGoods;
 
+import java.util.List;
+
 public class PriceListOfSportGoods extends PriceList {
     public PriceListOfSportGoods(String name, double price, int item) {
         super(name, price, item);
@@ -17,7 +19,7 @@ public class PriceListOfSportGoods extends PriceList {
         System.out.println("---------------------------------" + "\n" + "Прайс-лист спортивных товаров: " +
                 "\n" + "---------------------------------");
         ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10,5,5);
-        for (Product sportGoods : shelfOfSportGoods.productOnTheShelf)
+        for (Product sportGoods : shelfOfSportGoods.productOnTheShelfSport)
             System.out.println(sportGoods.toString());
         System.out.println("---------------------------------");
     }

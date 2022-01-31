@@ -1,5 +1,6 @@
 package ru.my.store.type;
 
+import ru.my.store.type.model.CreateToObject;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.Staff;
@@ -65,12 +66,11 @@ public class OfflineStore {
     }
 
     public static void input(Scanner scanner) {
-        Hostess hostess = new Hostess("Оксана", "Хостесс", 2);
+        Hostess hostess = CreateToObject.createHostess();
         hostess.sayHello();
         hostess.escortsToTheDepartment(scanner);
 
     }
-
 
     public void storeClose(Scanner scanner) {
 

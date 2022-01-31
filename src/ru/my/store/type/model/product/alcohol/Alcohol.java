@@ -1,5 +1,6 @@
 package ru.my.store.type.model.product.alcohol;
 
+import ru.my.store.type.model.CreateToObject;
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
@@ -10,7 +11,6 @@ import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.Staff;
 import ru.my.store.type.model.staff.ShopAssistant;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Alcohol extends Product {
@@ -35,7 +35,7 @@ public class Alcohol extends Product {
     public Alcohol() {
     }
 
-    ShopAssistant shopAssistant = new ShopAssistant("Олег", "продавец консультант отдела алкоголь", 5);
+    ShopAssistant shopAssistant = CreateToObject.createShopassistant("Олег", "продавец консультант отдела алкоголь", 5);
     PriceListOfAlcohol priceListOfAlcohol = new PriceListOfAlcohol();
 
     @Override
@@ -59,12 +59,12 @@ public class Alcohol extends Product {
                 + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
         while (true) {
             ShelfOfAlcohol shelfOfAlcohol = new ShelfOfAlcohol("Полка 3", 10, 5, 5);
-            for (Product alcohol : shelfOfAlcohol.productOnTheShelf) ;
+            for (Product alcohol : shelfOfAlcohol.productOnTheShelfAlc) ;
             Basket basket = new Basket("Корзина", 1, 5, 0, 5);
 
             int a = scanner.nextInt();
             if (a == 1) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(0));
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
                 goToMoneyKassa(scanner, basket);
@@ -86,8 +86,8 @@ public class Alcohol extends Product {
     @Override
     public void takeFromTheShelf(Scanner scanner, Shelf shelf, PriceList priceList) {
         ShelfOfAlcohol shelfOfAlcohol = new ShelfOfAlcohol("Полка 3", 10, 4, 6);
-        Basket basket3 = new Basket("Корзина", 1, 5, 0, 5);
-        putOnBasket(scanner, shelfOfAlcohol, basket3);
+        Basket basket = new Basket("Корзина", 1, 5, 0, 5);
+        putOnBasket(scanner, shelfOfAlcohol, basket);
 
 
     }
@@ -96,31 +96,31 @@ public class Alcohol extends Product {
         while (true) {
             int b = scanner.nextInt();
             if (b == 0) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(0));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 1) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(1));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(1));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 2) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(2));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(2));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 3) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(3));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(3));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 4) {
-                basket.basket.add(0, shelfOfAlcohol.productOnTheShelf.get(4));
+                basket.basket.add(0, shelfOfAlcohol.productOnTheShelfAlc.get(4));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
@@ -144,7 +144,7 @@ public class Alcohol extends Product {
                 Hostess hostess = new Hostess("Марина", "Хостесс", 1);
                 System.out.println("Здравствуйте, я " + hostess.getPosition() + " меня зовут " +
                         hostess.getName() + " я провожу Вас на кассу" + "\n" + "----------------------------------");
-                hostess.escortsToMoneyKassa(basket);
+                hostess.escortsToMoneyKassa(scanner, basket);
                 break;
             } else if (c == 2) {
                 welcome(scanner);

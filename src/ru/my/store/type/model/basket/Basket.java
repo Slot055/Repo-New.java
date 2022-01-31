@@ -3,11 +3,9 @@ package ru.my.store.type.model.basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
 import ru.my.store.type.model.shelf.Shelf;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 public class Basket {
     private String nameBasket;
@@ -31,10 +29,10 @@ public class Basket {
     public Basket() {
     }
 
-    public List<Product> basket = new ArrayList<>(5);
+    public List<Product> basket = new ArrayList<>();
 
     {
-        basket.add(new Product());
+
 
     }
 

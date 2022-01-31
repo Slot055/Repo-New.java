@@ -52,6 +52,7 @@ public class Staff {
 
     public void setName(String name) {
         this.name = name;
+
     }
 
     public String getPosition() {

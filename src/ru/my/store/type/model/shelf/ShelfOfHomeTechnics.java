@@ -17,18 +17,18 @@ public class ShelfOfHomeTechnics extends Shelf {
 
     }
 
-    public List<Product> productOnTheShelf = new ArrayList<>();
+    public List<Product> productOnTheShelfHt = new ArrayList<>();
 
     {
-        productOnTheShelf.add(new Teapot("Чайник электрический", 1700.00, 0, "Электрический", "Белый",
+        productOnTheShelfHt.add(new Teapot("Чайник электрический", 1700.00, 0, "Электрический", "Белый",
                 2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 10));
-        productOnTheShelf.add(new Teapot("Чайник электрический", 1450.00, 1, "Электрический", "Мультиколор",
+        productOnTheShelfHt.add(new Teapot("Чайник электрический", 1450.00, 1, "Электрический", "Мультиколор",
                 1.0, "Китай", "Ссылка на сайте www.eldorado.ru", 9));
-        productOnTheShelf.add(new Teapot("Чайник для плиты", 1300.00, 2, "Для плиты", "Металлик",
+        productOnTheShelfHt.add(new Teapot("Чайник для плиты", 1300.00, 2, "Для плиты", "Металлик",
                 2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8));
-        productOnTheShelf.add(new Teapot("Чайник походный", 1900.00, 3, "Походный", "Чёрный",
+        productOnTheShelfHt.add(new Teapot("Чайник походный", 1900.00, 3, "Походный", "Чёрный",
                 2.0, "Россия", "Ссылка на сайте www.eldorado.ru", 10));
-        productOnTheShelf.add(new Teapot("Чайник походный", 1850.00, 4, "Походный", "Серый",
+        productOnTheShelfHt.add(new Teapot("Чайник походный", 1850.00, 4, "Походный", "Серый",
                 2.0, "Китай", "Ссылка на сайте www.eldorado.ru", 8));
 
     }

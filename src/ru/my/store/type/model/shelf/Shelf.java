@@ -2,6 +2,9 @@ package ru.my.store.type.model.shelf;
 
 import ru.my.store.type.model.product.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public abstract class Shelf {
 
@@ -23,6 +26,7 @@ public abstract class Shelf {
     public Shelf() {
 
     }
+    public List<Product> productOnTheShelf = new ArrayList<>();
 
     public abstract void coming();
 

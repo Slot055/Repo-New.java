@@ -1,6 +1,7 @@
 package ru.my.store.type.model.staff;
 
 import ru.my.store.type.OfflineStore;
+import ru.my.store.type.model.CreateToObject;
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.product.alcohol.Alcohol;
@@ -45,7 +46,7 @@ public class Hostess extends Staff {
                     offerABasket();
                     System.out.println("---------------------------------");
 
-                    alcohol = new Alcohol();
+                    Alcohol alcohol = CreateToObject.createAlcohol();
                     alcohol.welcome(scanner);
 
                     break;
@@ -64,7 +65,7 @@ public class Hostess extends Staff {
                     offerABasket();
                     System.out.println("---------------------------------");
 
-                    sportGoods = new SportGoods();
+                    SportGoods sportGoods = CreateToObject.createSportGoods();
                     sportGoods.welcome(scanner);
                     break;
                 } else if (b == 2) {
@@ -83,7 +84,7 @@ public class Hostess extends Staff {
                     offerABasket();
                     System.out.println("---------------------------------");
 
-                    homeTechnics = new HomeTechnics();
+                    HomeTechnics homeTechnics = CreateToObject.createHomeTechnics();
                     homeTechnics.welcome(scanner);
                     break;
                 } else if (b == 2) {
@@ -103,9 +104,9 @@ public class Hostess extends Staff {
         }
     }
 
-    public void escortsToMoneyKassa(Basket basket) {
-        moneyKassa = new MoneyKassa(1);
-        moneyKassa.welcomeToKassa(basket);
+    public void escortsToMoneyKassa(Scanner scanner, Basket basket) {
+        MoneyKassa moneyKassa = CreateToObject.createMoneyKassa();
+        moneyKassa.welcomeToKassa(scanner, basket);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package ru.my.store.type.model.product.sportGoods;
 
-
+import ru.my.store.type.model.CreateToObject;
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.moneyKassa.MoneyKassa;
 import ru.my.store.type.model.priceList.PriceList;
@@ -12,7 +12,6 @@ import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.ShopAssistant;
 import ru.my.store.type.model.staff.Staff;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SportGoods extends Product {
@@ -44,13 +43,14 @@ public class SportGoods extends Product {
     }
 
 
-    ShopAssistant shopAssistant = new ShopAssistant("Виктор", "продавец консультант отдела Спортивных товаров",
-            5);
-    PriceListOfSportGoods priceListOfSportGoods = new PriceListOfSportGoods("Мяч", 500.00, 123);
+    ShopAssistant shopAssistant = CreateToObject.createShopassistant("Виктор","Продавец консультант спортивных товаров",5);
+
+    PriceListOfSportGoods priceListOfSportGoods = CreateToObject.createPriceListOfSportGoods();
 
     @Override
     public void welcome(Scanner scanner) {
-        System.out.println("Добро пожаловать в отдел Спортивных продуктов" + "\n" + "---------------------------------");
+        setName("Спортивные товары");
+        System.out.println("Добро пожаловать в отдел " + getName() + "\n" + "---------------------------------");
         shopAssistant.sayHello();
         Product topBall = new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
                 "Мультиколор", 5, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый");
@@ -69,13 +69,13 @@ public class SportGoods extends Product {
         System.out.println("1 - Выбрать " + getName() + " по совету " + "продавца консультанта " + shopAssistant.getName()
                 + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
         while (true) {
-            ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
-            for (Product sportGoods : shelfOfSportGoods.productOnTheShelf) ;
-            Basket basket = new Basket("Корзина", 1, 5, 0, 5);
+            ShelfOfSportGoods shelfOfSportGoods = CreateToObject.createShelfOfSportGoods(scanner, shelf, priceList);
+            for (Product sportGoods : shelfOfSportGoods.productOnTheShelfSport) ;
+            Basket basket = CreateToObject.createBasket(scanner,shelf,priceList);
 
             int a = scanner.nextInt();
             if (a == 1) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(0));
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
                 goToMoneyKassa(scanner, basket);
@@ -93,11 +93,10 @@ public class SportGoods extends Product {
         }
     }
 
-
     @Override
     public void takeFromTheShelf(Scanner scanner, Shelf shelf, PriceList priceList) {
-        ShelfOfSportGoods shelfOfSportGoods = new ShelfOfSportGoods("Полка 1", 10, 5, 5);
-        Basket basket = new Basket("Корзина", 1, 5, 0, 5);
+        ShelfOfSportGoods shelfOfSportGoods = CreateToObject.createShelfOfSportGoods(scanner, shelf, priceList);
+        Basket basket = CreateToObject.createBasket(scanner,shelf,priceList);
         putOnBasket(scanner, shelfOfSportGoods, basket);
     }
 
@@ -105,31 +104,31 @@ public class SportGoods extends Product {
         while (true) {
             int b = scanner.nextInt();
             if (b == 0) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(0));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 1) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(1));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(1));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 2) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(2));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(2));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 3) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(3));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(3));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 4) {
-                basket.basket.add(0, shelfOfSportGoods.productOnTheShelf.get(4));
+                basket.basket.add(0, shelfOfSportGoods.productOnTheShelfSport.get(4));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
@@ -146,7 +145,7 @@ public class SportGoods extends Product {
     }
 
     @Override
-    public void goToMoneyKassa(Scanner scanner, Basket basket1) {
+    public void goToMoneyKassa(Scanner scanner, Basket basket) {
         System.out.println("Товары в корзине" + "\n" + "1 - Пройти на кассу" + "\n" + "2 - Воспользоваться помощью продавца консультанта");
         while (true) {
             int c = scanner.nextInt();
@@ -154,7 +153,7 @@ public class SportGoods extends Product {
                 Hostess hostess = new Hostess("Марина", "Хостесс", 1);
                 System.out.println("Здравствуйте, я " + hostess.getPosition() + " меня зовут " +
                         hostess.getName() + " я провожу Вас на кассу" + "\n" + "---------------------------------");
-                hostess.escortsToMoneyKassa(basket1);
+                hostess.escortsToMoneyKassa(scanner, basket);
                 break;
             } else if (c == 2) {
                 welcome(scanner);

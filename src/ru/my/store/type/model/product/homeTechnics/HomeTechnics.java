@@ -1,5 +1,6 @@
 package ru.my.store.type.model.product.homeTechnics;
 
+import ru.my.store.type.model.CreateToObject;
 import ru.my.store.type.model.basket.Basket;
 import ru.my.store.type.model.priceList.PriceList;
 import ru.my.store.type.model.product.Product;
@@ -10,7 +11,6 @@ import ru.my.store.type.model.staff.Hostess;
 import ru.my.store.type.model.staff.Staff;
 import ru.my.store.type.model.staff.ShopAssistant;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeTechnics extends Product {
@@ -37,7 +37,7 @@ public class HomeTechnics extends Product {
     public HomeTechnics() {
     }
 
-    ShopAssistant shopAssistant = new ShopAssistant("Семён", "продавец консультант отдела бытовой техники", 7);
+    ShopAssistant shopAssistant = CreateToObject.createShopassistant("Семён", "продавец консультант отдела бытовой техники", 7);
     PriceListOfHomeTechnics priceListOfHomeTechnics = new PriceListOfHomeTechnics();
 
     @Override
@@ -62,12 +62,12 @@ public class HomeTechnics extends Product {
                 + "а" + "\n" + "2 - Выбрать товар из ассортимента в наличии");
         while (true) {
             ShelfOfHomeTechnics shelfOfHomeTechnics = new ShelfOfHomeTechnics("Полка 1", 10, 5, 5);
-            for (Product homeTechnics : shelfOfHomeTechnics.productOnTheShelf) ;
+            for (Product homeTechnics : shelfOfHomeTechnics.productOnTheShelfHt) ;
             Basket basket = new Basket("Корзина", 1, 5, 0, 5);
 
             int a = scanner.nextInt();
             if (a == 1) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(0));
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
                 goToMoneyKassa(scanner, basket);
@@ -98,31 +98,31 @@ public class HomeTechnics extends Product {
         while (true) {
             int b = scanner.nextInt();
             if (b == 0) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(0));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(0));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 1) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(1));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(1));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 2) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(2));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(2));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 3) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(3));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(3));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
 
             } else if (b == 4) {
-                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelf.get(4));
+                basket.basket.add(0, shelfOfHomeTechnics.productOnTheShelfHt.get(4));
                 System.out.println("Товары в корзине: ");
                 for (Product sum : basket.basket)
                     System.out.println(sum.toString());
@@ -146,7 +146,7 @@ public class HomeTechnics extends Product {
                 Hostess hostess = new Hostess("Марина", "Хостесс", 1);
                 System.out.println("Здравствуйте, я " + hostess.getPosition() + " меня зовут " +
                         hostess.getName() + " я провожу Вас на кассу" + "\n" + "---------------------------------");
-                hostess.escortsToMoneyKassa(basket);
+                hostess.escortsToMoneyKassa(scanner,basket);
                 break;
             } else if (c == 2) {
                 welcome(scanner);

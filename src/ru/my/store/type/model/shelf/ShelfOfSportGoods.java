@@ -17,19 +17,19 @@ public class ShelfOfSportGoods extends Shelf {
 
     }
 
-    public List<Product> productOnTheShelf = new ArrayList<>();
+    public List<Product> productOnTheShelfSport = new ArrayList<>();
 
 
     {
-        productOnTheShelf.add(new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
+        productOnTheShelfSport.add(new Ball("Мяч футбольный", 1500.00, 0, "Кожа", "Футбол",
                 "Мультиколор", 5, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый"));
-        productOnTheShelf.add(new Ball("Мяч футбольный", 1000.00, 1, "Кожа", "Футбол",
+        productOnTheShelfSport.add(new Ball("Мяч футбольный", 1000.00, 1, "Кожа", "Футбол",
                 "Мультиколор", 5, "США", "Тренировочный", "5", 0.5, "Reebok", "Круглый"));
-        productOnTheShelf.add(new Ball("Мяч баскетбольный", 1750.00, 2, "Полиуретан", "Баскетбол",
+        productOnTheShelfSport.add(new Ball("Мяч баскетбольный", 1750.00, 2, "Полиуретан", "Баскетбол",
                 "Коричневый", 7, "США", "Профессиональный", "5", 0.5, "Nike", "Круглый"));
-        productOnTheShelf.add(new Ball("Мяч для гольфа", 600.00, 3, "Текстиль", "Гольф",
+        productOnTheShelfSport.add(new Ball("Мяч для гольфа", 600.00, 3, "Текстиль", "Гольф",
                 "Коричневый", 4, "США", "Профессиональный", "5", 0.5, "Adidas", "Круглый"));
-        productOnTheShelf.add(new Ball("Мяч воллейбольный", 1650.00, 4, "Кожа", "Воллейбол",
+        productOnTheShelfSport.add(new Ball("Мяч воллейбольный", 1650.00, 4, "Кожа", "Воллейбол",
                 "Коричневый", 3, "США", "Профессиональный", "5", 0.5, "Nike", "Круглый"));
 
     }

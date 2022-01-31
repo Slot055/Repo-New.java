@@ -4,6 +4,8 @@ import ru.my.store.type.model.product.Product;
 
 import ru.my.store.type.model.shelf.ShelfOfAlcohol;
 
+import java.util.List;
+
 
 public class PriceListOfAlcohol extends PriceList {
     public PriceListOfAlcohol(String name, double price, int item) {
@@ -21,7 +23,7 @@ public class PriceListOfAlcohol extends PriceList {
         System.out.println("---------------------------------" + "\n" + "Прайс-лист алкоголя: " +
                 "\n" + "---------------------------------");
         ShelfOfAlcohol shelfOfAlcohol = new ShelfOfAlcohol("Полка 3", 10,4,6);
-        for (Product alcohol : shelfOfAlcohol.productOnTheShelf)
+        for (Product alcohol : shelfOfAlcohol.productOnTheShelfAlc)
             System.out.println(alcohol.toString());
         System.out.println("---------------------------------");
     }
